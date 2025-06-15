@@ -1,6 +1,6 @@
-# Trademark Similarity Analysis in the Brazilian Context
+# A Large Language Model-based Method for Trademark Similarity Analysis in the Brazilian Context.
 
-This repository contains the code and models developed for the Master's research project titled "A Large Language Model-based Method for Trademark Similarity Analysis in the Brazilian Context." This study proposes an innovative method utilizing Large Language Models (LLMs) to classify and explain the similarity between word marks, adhering to the criteria established by the Brazilian National Institute of Industrial Property (INPI).
+This repository contains the code and models developed for the article research titled "A Large Language Model-based Method for Trademark Similarity Analysis in the Brazilian Context." This study proposes an innovative method utilizing Large Language Models (LLMs) to classify and explain the similarity between word marks, adhering to the criteria established by the Brazilian National Institute of Industrial Property (INPI).
 
 ## Project Overview
 
