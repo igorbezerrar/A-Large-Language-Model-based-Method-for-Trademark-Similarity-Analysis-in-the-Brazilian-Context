@@ -1,8 +1,12 @@
-# A Large Language Model-based Method for Trademark Similarity Analysis in the Brazilian Context.
+# 🧠 A Large Language Model-based Method for Trademark Similarity Analysis in the Brazilian Context.
 
-This repository contains the code and models developed for the article research titled "A Large Language Model-based Method for Trademark Similarity Analysis in the Brazilian Context." This study proposes an innovative method utilizing Large Language Models (LLMs) to classify and explain the similarity between word marks, adhering to the criteria established by the Brazilian National Institute of Industrial Property (INPI).
+This repository contains the code and models developed for the research article titled "A Large Language Model-based Method for Trademark Similarity Analysis in the Brazilian Context." This study proposes an innovative method utilizing Large Language Models (LLMs) to classify and explain the similarity between word marks, adhering to the criteria established by the Brazilian National Institute of Industrial Property (INPI).
 
-## Project Overview
+## 🤖 Access our published paper
+
+Our research article, "A Large Language Model-based Method for Trademark Similarity Analysis in the Brazilian Context," has been submitted to the **World Patent Information** journal. We will update this section with the publication details once it is officially accepted and published.
+
+## 💡 Project Overview
 
 The increasing volume of trademark applications at INPI presents significant challenges, including prolonged processing times and inconsistencies in decisions. To address these issues, this project introduces an automated method structured into two main components:
 
@@ -11,22 +15,84 @@ The increasing volume of trademark applications at INPI presents significant cha
 
 The models were developed and evaluated using a real-world dataset extracted from INPI official publications. The results demonstrate high performance (accuracy ≈99%, F1-score >98%, AUC >99%) and expert-rated clarity of explanations.
 
-## Repository Structure
+This project:
+
+✔️ Uses **QLoRA and Unsloth** for memory-efficient fine-tuning of LLMs  
+✔️ Implements a **two-model pipeline**: a **classifier** and an **explainer**  
+✔️ Trains and evaluates multiple LLMs (**Mistral-Nemo**, **Qwen2-7B**, **Llama-3-8B**)  
+✔️ Follows INPI's criteria: **Phonetic**, **Ideological**, **Distinctiveness**, and **Market Proximity**  
+✔️ Includes **expert-validated explanation reports** for supervised evaluation  
+✔️ Provides **classification metrics (Accuracy, F1, AUC)** and **qualitative expert feedback**
+
+## 🚀 Technologies Used
+
+- **Transformers** 🤗 – NLP model loading and inference  
+- **Unsloth** ⚡ – Optimized fine-tuning for LLaMA and similar models  
+- **PEFT (QLoRA)** 🛠️ – Memory-efficient parameter tuning  
+- **scikit-learn** 📊 – Metrics and classification reports  
+- **Matplotlib & Seaborn** 📉 – Visualization (Confusion Matrices, ROC Curves, Boxplots)  
+- **Pandas & NumPy** 🏗️ – Data manipulation  
+- **Datasets** 📚 – Dataset management  
+
+---
+
+
+## 📂 Project Structure
+
+### **1️⃣ Dataset Preparation**
+- Uses the **Conflicting Marks Archive Dataset (CMAD)**  
+- Contains real-world trademark conflict cases from INPI  
+
+### **2️⃣ Classifier Fine-Tuning**
+- Fine-tunes LLMs using **binary-labeled pairs** (Similar / Different)  
+- Applies **QLoRA + Unsloth** for low-resource training  
+
+### **3️⃣ Explanation Prompt Engineering**
+- Builds **few-shot prompts** using **expert-reviewed examples**  
+- Follows **INPI's four similarity criteria** for justification generation  
+
+### **4️⃣ Evaluation Pipeline**
+- Calculates **Accuracy**, **Precision**, **Recall**, **F1-score**, **AUC**  
+- Generates **Confusion Matrices** and **ROC Curves**  
+- Collects **expert feedback** on explanation quality (Likert scale 0–5)  
+
+### **5️⃣ Error Analysis & Visualization**
+- Provides detailed **error analysis**, identifying common misclassification patterns  
+- Generates **boxplots** for explanation score distributions by model  
+
+## 📂 Repository Structure
 
 *   `classifier_model.ipynb`: Jupyter notebook containing the code for the trademark classification model.
 *   `explainer_model.ipynb`: Jupyter notebook containing the code for the trademark explanation model.
 *   `base_de_dados/dataset_llm.jsonl`: (Expected) The dataset used for training and evaluation.
 
-## Setup and Installation
+## ⚙️ Setup and Installation
 
 To run the notebooks in this repository, you need to set up a Python environment and install the necessary libraries. It is highly recommended to use a virtual environment.
 
 ### 1. Create a Virtual Environment (Optional but Recommended)
 
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
+It is highly recommended to use Python 3.10.12 for this project due to compatibility with `torch.compile` and `unsloth`. Follow these steps to create a virtual environment with Python 3.10.12:
+
+1.  **Check Python 3.10.12 availability:**
+    ```bash
+    python3.10 --version
+    ```
+    If Python 3.10.12 is not found, you may need to install it first. On Debian/Ubuntu systems, you can install it using:
+    ```bash
+    sudo apt update
+    sudo apt install -y python3.10-venv
+    ```
+2.  **Create the virtual environment:**
+    ```bash
+    python3.10 -m venv venv_py310
+    ```
+3.  **Activate the virtual environment:**
+    ```bash
+    source venv_py310/bin/activate
+    ```
+
+Once activated, your terminal prompt should change to indicate that you are in the `venv_py310` environment.
 
 ### 2. Install Dependencies
 
@@ -68,7 +134,7 @@ The notebooks expect a dataset file named `dataset_llm.jsonl` located in a direc
     └── dataset_llm.jsonl
 ```
 
-## Usage
+## 🚀 Usage
 
 Once the dependencies are installed and the dataset is in place, you can open and run the Jupyter notebooks:
 
@@ -84,7 +150,7 @@ Once the dependencies are installed and the dataset is in place, you can open an
 3.  **Run Cells:**
     Execute the cells sequentially in each notebook to replicate the training and evaluation processes for the classification and explanation models, respectively.
 
-## Models
+## 🧠 Models
 
 The notebooks utilize various open-source LLMs for fine-tuning, primarily through the `unsloth` library. The models evaluated include:
 
@@ -97,9 +163,16 @@ The notebooks utilize various open-source LLMs for fine-tuning, primarily throug
 
 Users can modify the `models_list` variable in the notebooks to experiment with different LLMs.
 
-## Contributing
+## 👏 Contributing
 
-Contributions to this project are welcome. Please feel free to open issues or submit pull requests.
+We welcome contributions!  
+If you spot any issues or have suggestions for improvement, feel free to open an issue or pull request.
+
+For questions, contact:  
+[![Gmail Badge](https://img.shields.io/badge/-igor.reis@ifpi.edu.br-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:igor.reis@ifpi.edu.br)](mailto:igor.reis@ifpi.edu.br)
+[![Gmail Badge](https://img.shields.io/badge/-ariel.teles@ifma.edu.br-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:ariel.teles@ifma.edu.br)](mailto:ariel.teles@ifma.edu.br)  
+
+---
 
 ## License
 
