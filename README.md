@@ -54,7 +54,7 @@ This project:
 ### **4️⃣ Evaluation Pipeline**
 - Calculates **Accuracy**, **Precision**, **Recall**, **F1-score**, **AUC**  
 - Generates **Confusion Matrices** and **ROC Curves**  
-- Collects **expert feedback** on explanation quality (Likert scale 0–5)  
+- Collects **expert feedback** on explanation quality  
 
 ### **5️⃣ Error Analysis & Visualization**
 - Provides detailed **error analysis**, identifying common misclassification patterns  
